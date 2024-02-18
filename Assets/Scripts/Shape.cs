@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Shape : MonoBehaviour
 {
-    private string shapeName;
+    protected string shapeName;
+    protected string color;
+
+    protected Renderer rendererReference;
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +19,18 @@ public class Shape : MonoBehaviour
     void Update()
     {
         
+    }
+
+    protected void GetMaterialColor()
+    {
+        rendererReference = GetComponent<Renderer>();
+        color = rendererReference.material.name;
+        Debug.Log(color);
+    }
+
+    protected void GetShapeName()
+    {
+        shapeName = gameObject.name;
+        Debug.Log(gameObject);
     }
 }
