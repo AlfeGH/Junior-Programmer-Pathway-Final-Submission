@@ -21,16 +21,21 @@ public class Shape : MonoBehaviour
         
     }
 
-    protected void GetMaterialColor()
+    protected void GetMaterialColor()  // ABSTRACTION
     {
         rendererReference = GetComponent<Renderer>();
         color = rendererReference.material.name;
         Debug.Log(color);
     }
 
-    protected void GetShapeName()
+    protected void GetShapeName()  // ABSTRACTION
     {
         shapeName = gameObject.name;
         Debug.Log(gameObject);
+    }
+
+    protected virtual void ShowShapeVertices(int vertices) // POLYMORPHISM    // ABSTRACTION
+    {
+        Debug.Log("Number of vertices: " + vertices);
     }
 }
